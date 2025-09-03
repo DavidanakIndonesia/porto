@@ -693,7 +693,7 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-title">
-                <h2>Proyek Terbaru</h2>
+                <h2>Projects</h2>
             </div>
             <div class="projects-container">
                 <div class="project-card">
@@ -701,12 +701,12 @@
                         <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Robot Arm Project">
                     </div>
                     <div class="project-content">
-                        <h3>Robot Arm 4-DOF</h3>
-                        <p>Lengan robot dengan 4 derajat kebebasan yang dikendalikan melalui antarmuka web menggunakan Inverse Kinematics.</p>
+                        <h3>Robot Line Follower</h3>
+                        <p>Robot pengikut garis</p>
                         <div class="project-tags">
+                            <span class="project-tag">ESP32</span>
+                            <span class="project-tag">C++</span>
                             <span class="project-tag">Arduino</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">3D Printing</span>
                         </div>
                         <a href="#" class="project-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -716,12 +716,12 @@
                         <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Autonomous Rover">
                     </div>
                     <div class="project-content">
-                        <h3>Rover Otonom</h3>
-                        <p>Kendaraan rover otonom yang dapat memetakan lingkungan dan menghindari rintangan menggunakan sensor LIDAR dan ROS.</p>
+                        <h3>Hack tools</h3>
+                        <p>alat hack/jammer multi fungsi</p>
                         <div class="project-tags">
-                            <span class="project-tag">ROS</span>
-                            <span class="project-tag">LIDAR</span>
-                            <span class="project-tag">Python</span>
+                            <span class="project-tag">ESP32</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Arduino</span>
                         </div>
                         <a href="#" class="project-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -731,12 +731,12 @@
                         <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Smart Drone">
                     </div>
                     <div class="project-content">
-                        <h3>Drone Pintar</h3>
-                        <p>Drone dengan kemampuan computer vision untuk deteksi objek dan pelacakan otomatis menggunakan algoritma YOLO.</p>
+                        <h3>Platform Game Mini Portable</h3>
+                        <p>Platform game mini yang bisa dibawa kemanapun dengan catu daya baterai yang bisa diisi ulang</p>
                         <div class="project-tags">
-                            <span class="project-tag">Computer Vision</span>
+                            <span class="project-tag">Portable</span>
                             <span class="project-tag">ESP32</span>
-                            <span class="project-tag">DroneKit</span>
+                            <span class="project-tag">Game</span>
                         </div>
                         <a href="#" class="project-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -757,28 +757,28 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>ahmad.rizki@example.com</p>
+                            <p>ferdiansyahmuhammaddavid@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>Telepon</h3>
-                            <p>+62 812 3456 7890</p>
+                            <p>+62 813-2871-7233</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h3>Lokasi</h3>
-                            <p>Depok, Jawa Barat, Indonesia</p>
+                            <p>Gresik, Jawa Timur, Indonesia</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-university"></i>
                         <div>
                             <h3>Pendidikan</h3>
-                            <p>Universitas Indonesia, Teknik Elektro</p>
+                            <p>Universitas Negeri Surabaya, Teknik Elektro</p>
                         </div>
                     </div>
                 </div>
@@ -812,7 +812,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <div class="footer-logo">Robo<span>Portfolio</span></div>
+                    <div class="footer-logo">David<span>Portfolio</span></div>
                     <p>Portofolio profesional untuk memamerkan karya dan keahlian dalam bidang teknik elektro dan robotika.</p>
                     <div class="footer-social">
                         <a href="#"><i class="fab fa-github"></i></a>
@@ -869,17 +869,18 @@
         // Form submission handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Terima kasih! Pesan Anda telah dikirim. (Ini adalah demo, pesan tidak benar-benar dikirim)');
+            alert('Terima kasih! Pesan Anda telah dikirim.');
             this.reset();
         });
         
         // Newsletter form handling
         document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Terima kasih telah berlangganan newsletter kami! (Ini adalah demo, email tidak benar-benar terdaftar)');
+            alert('Terima kasih telah berkunjung)');
             this.reset();
         });
     </script>
 </body>
 
 </html>
+
