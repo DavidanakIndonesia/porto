@@ -3,1417 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Muhammad David Ferdiansyah</title>
+    <title>Portofolio Muhammad David Ferdiansyah - (Improved)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        :root {
+        :root{
             --primary: #2c3e50;
             --secondary: #3498db;
             --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --text: #333;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--light);
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Particles Background */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: rgba(44, 62, 80, 0.9);
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            padding: 10px 0;
-            background-color: rgba(26, 37, 48, 0.95);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            transition: var(--transition);
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .logo span {
-            color: var(--secondary);
-        }
-
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--secondary);
-            transition: width 0.5s ease;
-        }
-
-        .logo:hover::after {
-            width: 100%;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            font-weight: 500;
-            transition: var(--transition);
-            padding: 5px 10px;
-            border-radius: 4px;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-
-        /* Profile Photo Styles */
-        .hero-profile {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 30px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-profile img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .mobile-profile {
-            display: none;
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .mobile-profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            margin: 0 auto 15px;
-        }
-
-        .mobile-profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .mobile-profile h4 {
-            color: white;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .mobile-profile p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 180px 0 100px;
-            background: linear-gradient(135deg, var(--primary) 0%, #1a2530 100%);
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.3s forwards;
-            opacity: 0;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            animation: fadeInUp 1s ease-out 0.6s forwards;
-            opacity: 0;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: all 0.5s ease;
-            z-index: -1;
-        }
-
-        .btn:hover::before {
-            width: 100%;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-outline {
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn-outline:hover {
-            background-color: white;
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Sections */
-        section {
-            padding: 80px 0;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary);
-            transition: width 0.5s ease;
-        }
-
-        .section-title h2:hover::after {
-            width: 120px;
-        }
-
-        /* About Section */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-img {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .about-img::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--secondary), transparent);
-            opacity: 0.1;
-            z-index: 1;
-            transition: var(--transition);
-        }
-
-        .about-img:hover::before {
-            opacity: 0.3;
-        }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-        }
-
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-        }
-
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 0;
-            background: var(--secondary);
-            transition: height 0.5s ease;
-        }
-
-        .skill-card:hover::before {
-            height: 100%;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-card i {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .skill-card:hover i {
-            transform: scale(1.2);
-        }
-
-        .skill-card h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Projects Section */
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background: linear-gradient(to bottom, rgba(52, 152, 219, 0.8), transparent);
-            transition: height 0.5s ease;
-            z-index: 1;
-        }
-
-        .project-card:hover::before {
-            height: 100%;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-img {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-img img {
-            transform: scale(1.1);
-        }
-
-        .project-content {
-            padding: 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .project-content h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .project-content p {
-            margin-bottom: 15px;
-            color: #666;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .project-tag {
-            background-color: var(--light);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: var(--dark);
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-tag {
-            background-color: var(--secondary);
-            color: white;
-        }
-
-        .project-link {
-            color: var(--secondary);
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: var(--transition);
-        }
-
-        .project-link:hover {
-            gap: 10px;
-            color: var(--primary);
-        }
-
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: var(--transition);
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        .contact-item:hover {
-            background-color: rgba(52, 152, 219, 0.1);
-            transform: translateX(10px);
-        }
-
-        .contact-item i {
-            width: 50px;
-            height: 50px;
-            background-color: var(--secondary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .contact-item:hover i {
-            transform: scale(1.1);
-        }
-
-        .contact-form {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-
-        .contact-form:hover {
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            border-color: var(--secondary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
+            --light: #f7f9fb;
+            --dark: #1b2730;
+            --text: #222;
+            --header-h: 72px;
+        }
+
+        *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,Arial,sans-serif}
+        html{scroll-behavior:smooth}
+        body{background:var(--light);color:var(--text);line-height:1.5;padding-top:calc(var(--header-h) + 10px);overflow-x:hidden}
+        a{text-decoration:none;color:inherit}
+        ul{list-style:none}
+        .container{width:94%;max-width:1200px;margin:0 auto}
+
+        /* Header */
+        header{position:fixed;top:0;left:0;right:0;height:var(--header-h);background:rgba(255,255,255,0.95);display:flex;align-items:center;border-bottom:1px solid rgba(0,0,0,0.06);z-index:1200;backdrop-filter:blur(6px)}
+        nav{display:flex;align-items:center;justify-content:space-between;width:100%}
+        .logo{font-weight:700;font-size:1.1rem;color:var(--primary)}
+        .logo span{color:var(--secondary);margin-left:6px;font-weight:600}
+
+        .nav-links{display:flex;gap:18px;align-items:center}
+        .nav-links a{padding:8px 10px;border-radius:8px;color:var(--dark);font-weight:600}
+        .nav-links a:hover{background:rgba(52,152,219,0.08);color:var(--secondary)}
+        .hamburger{display:none;font-size:1.25rem;cursor:pointer}
+
+        /* Mobile overlay nav */
+        .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1100}
+        .mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:linear-gradient(180deg,#ffffff,#f1f6fb);box-shadow:-12px 0 30px rgba(0,0,0,0.12);z-index:1150;padding:20px 18px;transition:right 0.28s ease}
+        .mobile-nav.active{right:0}
+        .mobile-nav .close{display:flex;justify-content:flex-end;margin-bottom:6px}
+        .mobile-nav ul{display:flex;flex-direction:column;gap:14px;padding-top:10px}
+        .mobile-profile{display:flex;flex-direction:column;align-items:center;padding:12px 8px;border-radius:10px;background:linear-gradient(90deg,rgba(52,152,219,0.06),transparent);margin-bottom:12px}
+        .mobile-profile img{width:92px;height:92px;border-radius:50%;object-fit:cover;object-position:center 12%}
+
+        /* Hero */
+        .hero{background:linear-gradient(135deg,var(--primary),#1a2530);color:white;padding:48px 0;border-radius:0 0 18px 18px;position:relative;overflow:hidden}
+        .hero-inner{display:grid;grid-template-columns:280px 1fr;gap:30px;align-items:center}
+
+        .hero-profile{width:260px;height:260px;border-radius:12px;overflow:hidden;border:4px solid rgba(255,255,255,0.12);box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+        .hero-profile img{width:100%;height:100%;object-fit:cover;object-position:center 8%}
+
+        .hero-text h1{font-size:2.2rem;margin-bottom:8px}
+        .hero-text p{opacity:0.92}
+        .hero-buttons{display:flex;gap:12px;margin-top:16px}
+        .btn{padding:10px 16px;border-radius:999px;font-weight:700;border:none;cursor:pointer}
+        .btn-primary{background:var(--secondary);color:white}
+        .btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.14);color:white}
+
+        /* Sections common */
+        section{padding:56px 0}
+        .section-title{text-align:center;margin-bottom:36px}
+        .section-title h2{font-size:1.6rem;color:var(--dark)}
+
+        /* About */
+        .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+        .about-img{border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+        .about-img img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+        .about-text h3{color:var(--primary);margin-bottom:8px}
+        .about-text p{margin-bottom:10px;color:#333}
+
+        /* Skills */
+        .skills-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+
+        /* Projects */
+        .projects-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+        .project-card{background:white;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(15,23,30,0.06)}
+        .project-img{height:180px;overflow:hidden}
+        .project-img img{width:100%;height:100%;object-fit:cover}
+        .project-content{padding:14px}
+        .project-tags{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+        .project-tag{background:#f1f6fb;padding:6px 10px;border-radius:20px;font-size:0.8rem}
+
+        /* Contact */
+        .contact-container{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+        .contact-item{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:white}
+        .contact-item i{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--secondary);color:white}
+        .contact-form{background:white;padding:16px;border-radius:10px}
+        .form-control{width:100%;padding:10px;border:1px solid #e3e8ef;border-radius:8px}
+
+        footer{background:var(--dark);color:white;padding:30px 0;margin-top:20px}
+        .footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+        .footer-logo{font-weight:700}
+
+        /* Back to top */
+        .back-to-top{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;background:var(--secondary);color:white;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,0.18);z-index:1300;display:none}
+
+        /* Small screens */
+        @media (max-width: 900px){
+            .hero-inner{grid-template-columns:160px 1fr;padding:6px}
+            .hero-profile{width:160px;height:160px}
+            .hero-text h1{font-size:1.6rem}
+        }
+
+        @media (max-width: 768px){
+            .nav-links{display:none}
+            .hamburger{display:block}
+            .mobile-overlay{display:none}
+
+            .hero{padding:30px 0}
+            .hero-inner{grid-template-columns:1fr;gap:18px;text-align:center}
+            .hero-profile{width:180px;height:180px;margin:0 auto}
+            .hero-text{padding:0 10px}
 
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-logo span {
-            color: var(--secondary);
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer-social a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--secondary), var(--accent));
-            opacity: 0;
-            transition: var(--transition);
-            z-index: 0;
-        }
-
-        .footer-social a:hover::before {
-            opacity: 1;
-        }
-
-        .footer-social a i {
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-social a:hover {
-            transform: translateY(-5px);
-        }
-
-        .footer-links h3, .footer-newsletter h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-links h3::after, .footer-newsletter h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background-color: var(--secondary);
-            transition: width 0.5s ease;
-        }
-
-        .footer-links h3:hover::after, .footer-newsletter h3:hover::after {
-            width: 80px;
-        }
-
-        .footer-links ul {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .footer-links a {
-            transition: var(--transition);
-            opacity: 0.8;
-            display: inline-block;
-        }
+            .about-inner{grid-template-columns:1fr;}
+            .contact-container{grid-template-columns:1fr}
+            .back-to-top{display:block}
 
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--secondary);
-            transform: translateX(5px);
+            .mobile-overlay.show{display:block}
         }
 
-        .footer-newsletter p {
-            margin-bottom: 20px;
-            opacity: 0.8;
+        @media (max-width:420px){
+            .hero-profile{width:140px;height:140px}
+            .hero-text h1{font-size:1.3rem}
         }
 
-        .newsletter-form {
-            display: flex;
-            gap: 10px;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .newsletter-form button {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .newsletter-form button:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--secondary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition);
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--primary);
-            transform: translateY(-5px);
-        }
+        /* Helpers */
+        .muted{opacity:0.8}
+        .text-xs{font-size:0.85rem}
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-img, .about-text {
-                flex: none;
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--primary);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 40px;
-                transition: var(--transition);
-                padding-top: 20px;
-                overflow-y: auto;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .mobile-profile {
-                display: block;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-            }
-            
-            .hero-profile {
-                width: 150px;
-                height: 150px;
-            }
-
-
-  /* Tambahkan style berikut untuk menyesuaikan posisi foto */
-  .hero-profile {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .hero-profile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%; /* Geser foto 30% dari atas */
-    transform: translateY(0); /* Reset transform sebelumnya */
-  }
-  
-  .mobile-profile-img {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .mobile-profile-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%; /* Geser foto 30% dari atas */
-  }
-  
-  /* Jika perlu menambahkan margin atas pada container foto */
-  .hero-content {
-    padding-top: 20px; /* Sesuaikan sesuai kebutuhan */
-  }
-
-
-
-            
-        }
     </style>
 </head>
 <body>
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
 
-    <!-- Header & Navigation -->
-    <header id="header">
+    <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">David<span>Portfolio</span></a>
-                <ul class="nav-links">
-                    <li class="mobile-profile">
-                        <div class="mobile-profile-img">
-                            <img src="/DSC_0842_014051.JPG" alt="Muhammad David Ferdiansyah">
-                        </div>
-                        <h4>Muhammad David Ferdiansyah</h4>
-                        <p>Mahasiswa Teknik Elektro</p>
-                    </li>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="#skills">Keahlian</a></li>
-                    <li><a href="#projects">Proyek</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
+                <div class="logo">David <span>Portfolio</span></div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">Tentang</a>
+                    <a href="#skills">Keahlian</a>
+                    <a href="#projects">Proyek</a>
+                    <a href="#contact">Kontak</a>
                 </div>
+                <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-profile" data-aos="fade-down">
-                    <img src="/DSC_0842_014051.JPG" alt="Muhammad David Ferdiansyah">
-                </div>
-                <h1>Muhammad David Ferdiansyah</h1>
-                <p>Saya bersemangat dalam menciptakan solusi inovatif melalui teknologi robotika dan IoT. Jelajahi portofolio saya untuk melihat proyek-proyek yang telah saya kerjakan.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
-                    <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
-                </div>
-            </div>
+    <!-- Mobile nav overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+    <aside class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <div class="close"><button id="mobileClose" aria-label="Tutup menu" style="background:none;border:none;font-size:18px;cursor:pointer"><i class="fas fa-times"></i></button></div>
+        <div class="mobile-profile">
+            <!-- Use the local image file (place beside this html file) -->
+            <img src="DSC_0842_014051.JPG" alt="David Ferdiansyah" loading="lazy">
+            <div style="margin-top:8px;font-weight:700">Muhammad David</div>
+            <div class="muted text-xs">Mahasiswa Teknik Elektro</div>
         </div>
-    </section>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </aside>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Tentang Saya</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-img" data-aos="fade-right">
-                    <img src="/1756907541972.jpg" alt="Profil Mahasiswa Teknik Elektro Robotik">
+    <!-- Hero -->
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-inner">
+                    <div class="hero-profile" data-aos="fade-right">
+                        <!-- local photo; crop/position via CSS object-position to focus face -->
+                        <img src="DSC_0842_014051.JPG" alt="Muhammad David Ferdiansyah" loading="lazy">
+                    </div>
+                    <div class="hero-text" data-aos="fade-left">
+                        <h1>Muhammad David Ferdiansyah</h1>
+                        <p>Saya bersemangat menciptakan solusi inovatif di bidang robotika, embedded systems, dan IoT. Lihat proyek saya di bawah untuk contoh implementasi nyata.</p>
+                        <div class="hero-buttons">
+                            <a class="btn btn-primary" href="#projects">Lihat Proyek</a>
+                            <a class="btn btn-outline" href="#contact">Hubungi Saya</a>
+                        </div>
+                        <div style="margin-top:12px;color:rgba(255,255,255,0.85);font-size:0.9rem">Universitas Negeri Surabaya &middot; Teknik Elektro</div>
+                    </div>
                 </div>
-                <div class="about-text" data-aos="fade-left">
-                    <h3>Halo! Saya Muhammad David Ferdiansyah</h3>
-                    <p>Saya adalah mahasiswa Teknik Elektro. Saya memiliki ketertarikan yang besar dalam mengembangkan sistem robotika yang inovatif dan bermanfaat bagi masyarakat.</p>
-                    <p>Selama masa sekolah menengah atas, saya telah mempelajari berbagai konsep penting dalam robotika termasuk Pemograman, Assembly, Soldering, ELectronic, Mekanik dll..</p>
-                    <p>Selain akademik, saya aktif dalam organisasi robotika dan telah berpartisipasi dalam beberapa kompetisi robot nasional maupun internasional. Saya percaya bahwa kolaborasi dan continuous learning adalah kunci untuk berkembang di bidang yang dinamis seperti robotika.</p>
-                    <a href="#contact" class="btn btn-primary">Hubungi Saya</a>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Keahlian Teknis</h2>
-            </div>
-            <div class="skills-container">
-                <div class="skill-card" data-aos="flip-left" data-aos-delay="0">
-                    <i class="fas fa-microchip"></i>
-                    <h3>Embedded Systems</h3>
-                    <p>Pengembangan sistem embedded menggunakan Arduino, ESP32, Atmega, dan Raspberry Pi untuk aplikasi robotika.</p>
-                </div>
-                <div class="skill-card" data-aos="flip-left" data-aos-delay="100">
-                    <i class="fas fa-code"></i>
-                    <h3>Pemrograman</h3>
-                    <p>C/C++, HTML.</p>
-                </div>
-                <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
-                    <i class="fas fa-robot"></i>
-                    <h3>Robotika</h3>
-                    <p>Desain dan implementasi sistem robotika termasuk mobil otonom dan manipulator robot.</p>
-                </div>
-                <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
-                    <i class="fas fa-tools"></i>
-                    <h3>Fabrikasi</h3>
-                    <p>Desain CAD, pencetakan 3D, dan fabrikasi komponen robot menggunakan berbagai tools manufacturing.</p>
+        <!-- About -->
+        <section id="about">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up"><h2>Tentang Saya</h2></div>
+                <div class="about-inner">
+                    <div class="about-img" data-aos="fade-right">
+                        <!-- event photo; local file -->
+                        <img src="1756907541972.jpg" alt="Kegiatan kompetisi robot" loading="lazy" style="max-height:420px;">
+                    </div>
+                    <div class="about-text" data-aos="fade-left">
+                        <h3>Halo! Saya Muhammad David Ferdiansyah</h3>
+                        <p>Saya adalah mahasiswa Teknik Elektro dengan fokus pada robotika, embedded programming, dan control systems. Saya aktif mengikuti kompetisi robot dan mengembangkan proyek-proyek praktis mulai dari line follower hingga sistem otomatisasi.</p>
+                        <p>Saya memiliki pengalaman di pemrograman C/C++, kerja dengan ESP32/Arduino, desain mekanik sederhana, serta fabrikasi komponen. Selalu tertarik berkolaborasi pada proyek nyata yang berdampak.</p>
+                        <a class="btn btn-primary" href="#contact">Diskusi Proyek</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Projects</h2>
-            </div>
-            <div class="projects-container">
-                <div class="project-card" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Robot Arm Project">
+        <!-- Skills -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up"><h2>Keahlian Teknis</h2></div>
+                <div class="skills-container" data-aos="fade-up">
+                    <div class="project-card" style="padding:18px">
+                        <h3>Embedded Systems</h3>
+                        <p class="muted">Arduino, ESP32, Atmega, Raspberry Pi</p>
                     </div>
-                    <div class="project-content">
-                        <h3>Robot Line Follower</h3>
-                        <p>Robot pengikut garis</p>
-                        <div class="project-tags">
-                            <span class="project-tag">ESP32</span>
-                            <span class="project-tag">C++</span>
-                            <span class="project-tag">Arduino</span>
-                        </div>
-                        <a href="#" class="project-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    <div class="project-card" style="padding:18px">
+                        <h3>Pemrograman</h3>
+                        <p class="muted">C/C++, Python, HTML/CSS</p>
                     </div>
-                </div>
-                <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Autonomous Rover">
+                    <div class="project-card" style="padding:18px">
+                        <h3>Robotika & Control</h3>
+                        <p class="muted">Line follower, PID tuning, sensor integration</p>
                     </div>
-                    <div class="project-content">
-                        <h3>Hack tools</h3>
-                        <p>alat hack/jammer multi fungsi</p>
-                        <div class="project-tags">
-                            <span class="project-tag">ESP32</span>
-                            <span class="project-tag">C++</span>
-                            <span class="project-tag">Arduino</span>
-                        </div>
-                        <a href="#" class="project-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Smart Drone">
-                    </div>
-                    <div class="project-content">
-                        <h3>Platform Game Mini Portable</h3>
-                        <p>Platform game mini yang bisa dibawa kemanapun dengan catu daya baterai yang bisa diisi ulang</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Portable</span>
-                            <span class="project-tag">ESP32</span>
-                            <span class="project-tag">Game</span>
-                        </div>
-                        <a href="#" class="project-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    <div class="project-card" style="padding:18px">
+                        <h3>Fabrikasi & CAD</h3>
+                        <p class="muted">3D printing, desain mekanik sederhana</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Hubungi Saya</h2>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info" data-aos="fade-right">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>ferdiansyahmuhammaddavid@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Telepon</h3>
-                            <p>+62 813-2871-7233</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Lokasi</h3>
-                            <p>Gresik, Jawa Timur, Indonesia</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-university"></i>
-                        <div>
-                            <h3>Pendidikan</h3>
-                            <p>Universitas Negeri Surabaya, Teknik Elektro</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form" data-aos="fade-left">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nama Lengkap</label>
-                            <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Alamat Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Masukkan email Anda" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subjek</label>
-                            <input type="text" id="subject" class="form-control" placeholder="Subjek pesan" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea id="message" class="form-control" placeholder="Tulis pesan Anda di sini..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Projects -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up"><h2>Proyek</h2></div>
+                <div class="projects-container">
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about" data-aos="fade-up">
-                    <div class="footer-logo">David<span>Portfolio</span></div>
-                    <p>Portofolio profesional untuk karya dan keahlian dalam bidang teknik elektro dan robotika.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    <div class="project-card" data-aos="zoom-in">
+                        <div class="project-img">
+                            <!-- use the event photo (shows robot and you) to make portfolio personal -->
+                            <img src="1756907541972.jpg" alt="Robot competition - line follower" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Robot Line Follower (Kompetisi)</h3>
+                            <p class="muted">Desain robot yang mengikuti garis pada arena kompetisi, dilengkapi sensor IR dan motor driver.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">ESP32</span>
+                                <span class="project-tag">C++</span>
+                                <span class="project-tag">PID</span>
+                            </div>
+                            <a href="#contact" class="project-link">Hubungi untuk detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="zoom-in" data-aos-delay="80">
+                        <div class="project-img">
+                            <!-- placeholder image kept online but scaled nicely -->
+                            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=60" alt="Robot Arm" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Platform Game Mini Portable</h3>
+                            <p class="muted">Proyek perangkat portable berbasis ESP32 dengan layar kecil dan kontrol sederhana.</p>
+                            <div class="project-tags"><span class="project-tag">Portable</span><span class="project-tag">ESP32</span></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="zoom-in" data-aos-delay="160">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=800&q=60" alt="Smart Drone" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Platform Otonom (Research)</h3>
+                            <p class="muted">Eksplorasi sensor fusion dan path planning untuk kendaraan kecil otonom.</p>
+                            <div class="project-tags"><span class="project-tag">Sensor</span><span class="project-tag">Planning</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up"><h2>Hubungi Saya</h2></div>
+                <div class="contact-container">
+                    <div>
+                        <div class="contact-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><div class="muted">ferdiansyahmuhammaddavid@gmail.com</div></div></div>
+                        <div style="height:12px"></div>
+                        <div class="contact-item"><i class="fas fa-phone"></i><div><strong>Telepon</strong><div class="muted">+62 813-2871-7233</div></div></div>
+                        <div style="height:12px"></div>
+                        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Lokasi</strong><div class="muted">Gresik, Jawa Timur, Indonesia</div></div></div>
+                        <div style="height:12px"></div>
+                        <div class="contact-item"><i class="fas fa-university"></i><div><strong>Pendidikan</strong><div class="muted">Universitas Negeri Surabaya</div></div></div>
+                    </div>
+                    <div>
+                        <form class="contact-form" id="contactForm">
+                            <div style="display:flex;gap:8px;margin-bottom:8px">
+                                <input class="form-control" id="name" placeholder="Nama Lengkap" required>
+                                <input class="form-control" id="email" type="email" placeholder="Email" required>
+                            </div>
+                            <input class="form-control" id="subject" placeholder="Subjek" style="margin-bottom:8px" required>
+                            <textarea class="form-control" id="message" placeholder="Pesan" rows="5" required></textarea>
+                            <div style="margin-top:10px"><button class="btn btn-primary" type="submit">Kirim Pesan</button></div>
+                        </form>
                     </div>
                 </div>
-                <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Tautan Cepat</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">Tentang</a></li>
-                        <li><a href="#skills">Keahlian</a></li>
-                        <li><a href="#projects">Proyek</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Berlangganan</h3>
-                    <p>Dapatkan update tentang proyek terbaru dan artikel teknis tentang robotika.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Masukkan email Anda" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 DavidPortfolio. Dibuat dengan <i class="fas fa-heart" style="color: #e74c3c;"></i> untuk SatuLangkahDidepan</p>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div>
+                        <div class="footer-logo">David <span>Portfolio</span></div>
+                        <p class="muted">Portofolio profesional di bidang teknik elektro dan robotika.</p>
+                        <div style="display:flex;gap:10px;margin-top:10px">
+                            <a href="#" style="color:white"><i class="fab fa-github"></i></a>
+                            <a href="#" style="color:white"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" style="color:white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom:8px">Tautan</h4>
+                        <div class="muted">Home · Tentang · Proyek · Kontak</div>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom:8px">Newsletter</h4>
+                        <div class="muted">Masukkan email Anda untuk menerima update proyek.</div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:14px;opacity:0.8">&copy; 2025 DavidPortfolio</div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- Back to Top Button -->
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
+    </main>
 
-    <!-- Scripts -->
+    <div class="back-to-top" id="backToTop" title="Kembali ke atas"><i class="fas fa-arrow-up"></i></div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
+        AOS.init({duration:800,once:true,offset:80});
 
-        // Mobile Navigation Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile navigation when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Terima kasih! Pesan Anda telah dikirim.');
-            this.reset();
-        });
-        
-        // Newsletter form handling
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Terima kasih telah berlangganan! Anda akan menerima update terbaru dari saya.');
-            this.reset();
-        });
+        // Mobile nav handlers
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const mobileClose = document.getElementById('mobileClose');
+        const navLinks = document.querySelectorAll('a[href^="#"]');
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            const backToTop = document.querySelector('.back-to-top');
-            
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-                backToTop.classList.add('active');
-            } else {
-                header.classList.remove('scrolled');
-                backToTop.classList.remove('active');
-            }
-        });
+        function openMobile(){ mobileNav.classList.add('active'); mobileOverlay.classList.add('show'); mobileOverlay.style.display = 'block'; mobileOverlay.addEventListener('click', closeMobile); document.body.style.overflow = 'hidden' }
+        function closeMobile(){ mobileNav.classList.remove('active'); mobileOverlay.classList.remove('show'); mobileOverlay.style.display = 'none'; mobileOverlay.removeEventListener('click', closeMobile); document.body.style.overflow = '' }
 
-        // Back to top button
-        document.querySelector('.back-to-top').addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        hamburger && hamburger.addEventListener('click', openMobile);
+        mobileClose && mobileClose.addEventListener('click', closeMobile);
 
-        // Initialize particles.js
-        particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: "#ffffff"
-                },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    }
-                },
-                opacity: {
-                    value: 0.5,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 2,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#ffffff",
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: "none",
-                    random: true,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "grab"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    },
-                    resize: true
-                },
-                modes: {
-                    grab: {
-                        distance: 140,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    push: {
-                        particles_nb: 4
-                    }
-                }
-            },
-            retina_detect: true
-        });
+        // Close mobile when clicking internal links
+        navLinks.forEach(l=> l.addEventListener('click', ()=>{ if(window.innerWidth < 768) closeMobile() }))
+
+        // Contact form simple handler
+        const contactForm = document.getElementById('contactForm');
+        contactForm && contactForm.addEventListener('submit', function(e){ e.preventDefault(); alert('Terima kasih! Pesan Anda telah dikirim.'); this.reset(); })
+
+        // Back to top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', ()=>{ if(window.scrollY > 300) backToTop.style.display = 'flex'; else backToTop.style.display = 'none' })
+        backToTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}))
+
+        // particles minimal and subtle (keeps performance ok on mobile)
+        try{
+            particlesJS('particles-js', {particles:{number:{value:28,density:{enable:true,value_area:600}},color:{value:'#bbbbbb'},shape:{type:'circle'},opacity:{value:0.15},size:{value:3},line_linked:{enable:false},move:{enable:true,speed:1}} ,interactivity:{events:{onhover:{enable:false},onclick:{enable:false}},detect_on:'canvas'},retina_detect:true})
+        }catch(e){/* ignore if blocked */}
+
     </script>
 </body>
 </html>
-
-
-
-
-
